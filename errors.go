@@ -1,5 +1,8 @@
 package mcache
 
-import "errors"
+import (
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
+)
 
-var ErrNotFound = errors.New("cache entry not found")
+var ErrNotFound = status.Error(codes.NotFound, "cache entry not found")
